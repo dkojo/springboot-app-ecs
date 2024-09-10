@@ -1,39 +1,41 @@
-variable "region" {
-  description = "The AWS region where resources will be created"
+variable "aws_region" {
+  description = "The AWS region to deploy resources"
+  type        = string
   default     = "us-east-1"
 }
 
 variable "vpc_id" {
-  description = "The ID of the VPC where resources will be created"
-  default     = "vpc-09e0d3d45811dfa56"
+  description = "The ID of the VPC where the ECS cluster will be deployed"    
+  type        = string
+  default     = "vpc-02a4464202fe17b09"
 }
 
-variable "instance_ami" {
-  description = "AMI ID for the instances"
-  default     = "ami-0195204d5dce06d99"
+variable "subnet_ids" {
+  description = "A list of subnet IDs where the ECS services will be deployed"
+  type        = list(string)
+  default     = ["subnet-01c66f71f680b2182", "subnet-0065a5b9acf97af02"]       
 }
 
-variable "instance_key_name" {
-  description = "An Existing Keypair to be used for the instances"
-  default     = "key"
+variable "cluster_name" {
+  description = "The name of the ECS cluster"
+  type        = string
+  default     = "springboot-ecs-cluster"
 }
 
-variable "instance_subnet_id" {
-  description = "Public Subnet ID for the instances"
-  default     = "subnet-0fcd39b42ee32d8e6"
+variable "service_name" {
+  description = "The name of the ECS service"
+  type        = string
+  default     = "springboot-ecs-service"
 }
 
-variable "instance_type" {
-  description = "The Instance type"
-  default     = "t2.medium"
+variable "container_port" {
+  description = "The port on which the container will listen"
+  type        = number
+  default     = 8081
 }
 
-variable "s3_bucket_name" {
-  description = "The name of the S3 bucket for Terraform state"
-  default     = "springboot-app-s3-bucket"
-}
-
-variable "dynamodb_table_name" {
-  description = "The name of the DynamoDB table for Terraform state locking"
-  default     = "springboot-app-dynamoDB"
+variable "desired_count" {
+  description = "The number of desired tasks for the ECS service"
+  type        = number
+  default     = 2
 }
