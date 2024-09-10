@@ -9,7 +9,7 @@
   "containerDefinitions": [
     {
       "name": "springboot-app",
-      "image": "870342665742.dkr.ecr.us-east-1.amazonaws.com/springboot-ecr:V001",
+      "image": "870342665742.dkr.ecr.us-east-1.amazonaws.com/springboot-ecr:V002",
       "essential": true,
       "portMappings": [
         {
