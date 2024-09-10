@@ -12,14 +12,14 @@
         "subnet-0065a5b9acf97af02"
       ],
       "securityGroups": [
-        "sg-08fa0792d95f6976a"
+        "sg-0f901c280976278b5"
       ],
       "assignPublicIp": "ENABLED"
     }
   },
   "loadBalancers": [
     {
-      "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:870342665742:targetgroup/springboot-tg/98cddedb5cd2c42c",
+      "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:870342665742:targetgroup/springboot-app-tg/1c5d3f246859f392",
       "containerName": "springboot-app",
       "containerPort": 8081
     }
