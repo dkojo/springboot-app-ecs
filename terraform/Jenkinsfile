@@ -48,7 +48,7 @@ pipeline {
                     }
                 }
             }
-        }
+        
 
         stage('Terraform Plan') {
             steps {
@@ -60,7 +60,7 @@ pipeline {
                      }
                  }
              }
-         }
+         
         
         stage('Terraform Apply Or Destroy') {
             steps {
@@ -73,4 +73,4 @@ pipeline {
                 }
             }
         }
-    }
+    
